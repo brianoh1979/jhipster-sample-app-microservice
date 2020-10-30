@@ -19,6 +19,6 @@
   },
   "scripts": {
     "prettier:format": "prettier --write \"{,src/**/}*.{md,json,yml}\""
-    "test": "yarn test"
+    "test": "scripts/test"
   }
 }
