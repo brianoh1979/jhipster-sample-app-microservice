@@ -30,15 +30,4 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 #      - run: yarn run test
-      
-      - run:
-          name: Test
-          command: | 
-              (
-                ./mvnw -Pprod,war clean verify
-              ) || {
-                if [ $? -ne 0 ]; then
-                  // retry
-                  ./mvnw -Pprod,war clean verify
-                fi
-              }
+      - run: ./mvnw -Pprod,war clean verify
